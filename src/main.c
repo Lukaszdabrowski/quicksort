@@ -8,7 +8,7 @@ int main(){
   printf("Podaj ilosc elementow: ");
   scanf("%d",&size);
 
-  printf("Enter %d elementy: ",size);
+  printf("Wprowadz %d liczb: ",size);
   for(i=0;i<size;i++)
     scanf("%d",&x[i]);
 
