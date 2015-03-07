@@ -16,7 +16,7 @@ int main(){
 
   printf("Posortowane elementy: ");
   for(i=0;i<size;i++)
-    printf(" %d",x[i]\n);
+    printf(" %d",x[i]);
 
   return 0;
 }
