@@ -17,6 +17,7 @@ int main(){
   printf("Posortowane elementy: ");
   for(i=0;i<size;i++)
     printf(" %d",x[i]);
+    printf();
 
   return 0;
 }
@@ -46,6 +47,6 @@ void quicksort(int x[10],int first,int last){
          x[j]=temp;
          quicksort(x,first,j-1);
          quicksort(x,j+1,last);
-
+         
     }
 }
