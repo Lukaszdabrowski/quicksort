@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<time.h>
 
 void quicksort(int [10],int,int);
 
@@ -48,4 +49,11 @@ void quicksort(int x[10],int first,int last){
          quicksort(x,j+1,last);
          
     }
+}
+int main(){
+    clock_t start = clock();
+    // Execuatable code
+    clock_t stop = clock();
+    double elapsed = (double)(stop - start) * 1000.0 / CLOCKS_PER_SEC;
+    printf("Time elapsed in ms: %f", elapsed);
 }
