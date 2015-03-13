@@ -50,7 +50,7 @@ void quicksort(int x[10],int first,int last){
          
     }
 }
-int main(){
+int timer(){
     clock_t start = clock();
     // Execuatable code
     clock_t stop = clock();
