@@ -1,7 +1,6 @@
 #include<stdio.h>
-#include<time.h>
 #include<stdint.h>
-
+#include<time.h>
 void quicksort(int [10],int,int);
 
 int main(){
@@ -22,17 +21,6 @@ int main(){
 
   return 0;
 }
-
-int64_t timespecDiff(struct timespec *timeA_p, struct timespec *timeB_p)
-{
-  return ((timeA_p->tv_sec * 1000000000) + timeA_p->tv_nsec) -
-           ((timeB_p->tv_sec * 1000000000) + timeB_p->tv_nsec);
-}
-
-int main(int argc, char **argv)
-{
-  struct timespec start, end;
-  clock_gettime(CLOCK_MONOTONIC, &start);
 
 void quicksort(int x[10],int first,int last){
     int pivot,j,temp,i;
@@ -60,17 +48,23 @@ void quicksort(int x[10],int first,int last){
          quicksort(x,first,j-1);
          quicksort(x,j+1,last);
          
-         clock_gettime(CLOCK_MONOTONIC, &end);
-         uint64_t timeElapsed = timespecDiff(&end, &start);
-        }
     }
 }
 
+int64_t timespecDiff(struct timespec *timeA_p, struct timespec *timeB_p)
+{
+  return ((timeA_p->tv_sec * 1000000000) + timeA_p->tv_nsec) -
+           ((timeB_p->tv_sec * 1000000000) + timeB_p->tv_nsec);
+}
 
-int timer(){
-    clock_t start = clock();
+int time(int argc, char **argv)
+{
+  struct timespec start, end;
+  clock_gettime(CLOCK_MONOTONIC, &start);
 
-    clock_t stop = clock();
-    double elapsed = (double)(stop - start) * 1000.0 / CLOCKS_PER_SEC;
-    printf("Time elapsed in ms: %f", elapsed);
+  // Some code I am interested in measuring 
+
+  clock_gettime(CLOCK_MONOTONIC, &end);
+
+  uint64_t timeElapsed = timespecDiff(&end, &start);
 }
