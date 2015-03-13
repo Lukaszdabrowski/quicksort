@@ -57,7 +57,7 @@ int64_t timespecDiff(struct timespec *timeA_p, struct timespec *timeB_p)
            ((timeB_p->tv_sec * 1000000000) + timeB_p->tv_nsec);
 }
 
-int time(int argc, char **argv)
+int timer(int argc, char **argv)
 {
   struct timespec start, end;
   clock_gettime(CLOCK_MONOTONIC, &start);
