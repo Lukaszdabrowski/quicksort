@@ -1,10 +1,13 @@
 TARGET=			quicksort
 
+CFLAGS=			-Wall \
+			-pedantic
+
 SOURCES_DIR=		src
 OBJECTS_DIR=		obj
 
 SOURCES_FILES=		main.c \
-			cmpfun.c
+			measure.c
 
 SOURCES=		$(patsubst \
 				%, \
