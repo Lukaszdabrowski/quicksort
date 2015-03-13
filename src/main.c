@@ -21,8 +21,7 @@ int main(){
 
   return 0;
 }
-int timer(){
-    clock_t start = clock();
+
 void quicksort(int x[10],int first,int last){
     int pivot,j,temp,i;
 
@@ -51,6 +50,10 @@ void quicksort(int x[10],int first,int last){
          
     }
 }
+
+int timer(){
+    clock_t start = clock();
+
     clock_t stop = clock();
     double elapsed = (double)(stop - start) * 1000.0 / CLOCKS_PER_SEC;
     printf("Time elapsed in ms: %f", elapsed);
